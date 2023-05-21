@@ -118,6 +118,7 @@ app.layout = dbc.Container([
             dcc.Graph(figure=sankey_fig)
         ],
         width={'size': 6, 'offset': 0, 'order': 'first'},
+            xs={'size': 12, 'offset': 0, 'order': 'last'},
             sm={'size': 12, 'offset': 0, 'order': 'last'},
             md={'size': 12, 'offset': 0, 'order': 'first'},
             lg={'size': 6, 'offset': 0, 'order': 'first'},
@@ -142,6 +143,7 @@ app.layout = dbc.Container([
             ]),
 
         ],width={'size': 6, 'offset': 0, 'order': 'first'},
+            xs={'size': 12, 'offset': 0, 'order': 'last'},
             sm={'size': 12, 'offset': 0, 'order': 'last'},
             md={'size': 12, 'offset': 0, 'order': 'first'},
             lg={'size': 6, 'offset': 0, 'order': 'first'},
@@ -157,6 +159,7 @@ app.layout = dbc.Container([
                 className='text-center'
             ),
             width={'size': 6, 'offset': 0, 'order': 'first'},
+            xs={'size': 12, 'offset': 0, 'order': 'last'},
             sm={'size': 12, 'offset': 0, 'order': 'last'},
             md={'size': 6, 'offset': 0, 'order': 'first'},
             lg={'size': 6, 'offset': 0, 'order': 'first'},
@@ -171,7 +174,8 @@ app.layout = dbc.Container([
                 className='text-center'
             ),
             width={'size': 6, 'offset': 0, 'order': 'last'},
-            sm={'size': 12, 'offset': 0, 'order': 'first'},
+            xs={'size': 12, 'offset': 0, 'order': 'last'},
+            sm={'size': 12, 'offset': 0, 'order': 'last'},
             md={'size': 6, 'offset': 0, 'order': 'last'},
             lg={'size': 6, 'offset': 0, 'order': 'last'},
             xl={'size': 6, 'offset': 0, 'order': 'last'}
