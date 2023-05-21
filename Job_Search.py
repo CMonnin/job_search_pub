@@ -96,34 +96,58 @@ server = app.server
 
 app.layout = dbc.Container([
     dbc.Row([
-        html.H1('Job_Search_2023', style={'text-align': 'center'}),  
+        dbc.Col(
+            html.H1('Job_Search_2023', className='text-center mb-4'),
+            width=12
+        )
     ]),
     dbc.Row([
         dbc.Col([
+            html.H5('Cian Monnin', className='text-center mb-4'),
+            html.Div([
+                dcc.Link('Github', href='https://github.com/CMonnin/', target='_blank'),
+            ], className='text-center'),
+            html.Div([
+                dcc.Link('LinkedIn', href='https://www.linkedin.com/in/cmonnin/', target='_blank'),
+            ], className='text-center')
+        ], width=12)
+    ]),
+
+    dbc.Row([
+        dbc.Col([
             dcc.Graph(figure=sankey_fig)
-        ]),
+        ],
+        width={'size': 6, 'offset': 0, 'order': 'first'},
+            sm={'size': 12, 'offset': 0, 'order': 'last'},
+            md={'size': 12, 'offset': 0, 'order': 'first'},
+            lg={'size': 6, 'offset': 0, 'order': 'first'},
+            xl={'size': 6, 'offset': 0, 'order': 'first'}),
         dbc.Col([
             dbc.Row([
-                html.Div(children=[
-                    dcc.Link('Github',href='https://github.com/CMonnin/',target='_blank'),
-                ]), 
-                html.Div(children=[
-                    dcc.Link('Linkedin', href = 'https://www.linkedin.com/in/cmonnin/', target='_blank')
-                ]), 
-                html.Div(children=[
-                    'Applications started mid-April 2023'
-                ]),
-                html.Div(children=[
-                    'Last updated 2023-05-20'
+                dbc.Col([
+                    dcc.Graph(figure=role_fig)
                 ])
             ]),
-            dbc.Row([
-            dcc.Graph(figure=role_fig)
-            ]),
             
-        ]),
+            dbc.Row([
+                dbc.Col([
+                    
+                    html.Div([
+                        'Applications started mid-April 2023'
+                    ]),
+                    html.Div([
+                        'Last updated 2023-05-20'
+                    ]),
+                ]),
+            ]),
+
+        ],width={'size': 6, 'offset': 0, 'order': 'first'},
+            sm={'size': 12, 'offset': 0, 'order': 'last'},
+            md={'size': 12, 'offset': 0, 'order': 'first'},
+            lg={'size': 6, 'offset': 0, 'order': 'first'},
+            xl={'size': 6, 'offset': 0, 'order': 'first'})
     ]),
-        dbc.Row([
+    dbc.Row([
         dbc.Col(
             dbc.Card(
                 dbc.CardBody([
@@ -132,7 +156,11 @@ app.layout = dbc.Container([
                 ]),
                 className='text-center'
             ),
-            width=6
+            width={'size': 6, 'offset': 0, 'order': 'first'},
+            sm={'size': 12, 'offset': 0, 'order': 'last'},
+            md={'size': 6, 'offset': 0, 'order': 'first'},
+            lg={'size': 6, 'offset': 0, 'order': 'first'},
+            xl={'size': 6, 'offset': 0, 'order': 'first'}
         ),
         dbc.Col(
             dbc.Card(
@@ -142,10 +170,14 @@ app.layout = dbc.Container([
                 ]),
                 className='text-center'
             ),
-            width=6
+            width={'size': 6, 'offset': 0, 'order': 'last'},
+            sm={'size': 12, 'offset': 0, 'order': 'first'},
+            md={'size': 6, 'offset': 0, 'order': 'last'},
+            lg={'size': 6, 'offset': 0, 'order': 'last'},
+            xl={'size': 6, 'offset': 0, 'order': 'last'}
         )
-    ], )
-])
+    ], className='mt-4')
+], className='p-5')
 
 # Run the app
 if __name__ == '__main__':
