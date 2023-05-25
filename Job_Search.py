@@ -1,15 +1,11 @@
 
 import dash
-from dash import dcc, html, dash_table
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output
-
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import plotly.express as px
 import plotly.io as pio
 
 import pandas as pd
+from dash import dcc, html
 
 # set the theme to a simialar seaborn theme
 pio.templates.default = "simple_white"
@@ -44,12 +40,15 @@ df.loc[df['Title'].str.contains('Machine Learning', case=False), 'Category'] = '
 
 linkedin_count = df['Source'].value_counts()['linkedin.com']
 indeed_count = df['Source'].value_counts()['indeed.com']
-# otta_count = df['Source'].value_counts()['otta.com']
 other_count = df['Source'].value_counts()['other']
+# remove them number I've been ghosted from 
 rejected_interview_count = df['List'].value_counts()['Rejected after interview'] - df['Ghosted after interview'].sum()
 rejected_count =  df['List'].value_counts()['TRASH']
+# right now no active interviews going so number of interviews = number I've been rejected from
 interview_count = df['List'].value_counts()['Rejected after interview']
+# sum the number of interviewers that ghosted me
 ghosted_count = df['Ghosted after interview'].sum()
+# everything left is the number I haven't heard from 
 no_response_count = len(df)  - rejected_count - rejected_interview_count - ghosted_count
 
 nodes = [
