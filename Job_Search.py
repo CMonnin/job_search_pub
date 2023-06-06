@@ -26,9 +26,6 @@ df['Source'] = df['Source'].apply(lambda x: x if x in source_list else 'other')
 # remove jobs that I haven't applied to yet
 df = df[df['List'].str.contains('apply to') == False]
 
-# changing the status from TRASH to rejected
-df['List']=df['List'].replace('TRASH','rejected')
-
 # Creating category to simplify titles
 
 df['Category'] = 'Other'
